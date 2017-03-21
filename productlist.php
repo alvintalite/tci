@@ -36,6 +36,7 @@ $pages = ceil($total / $perPage);
 
 #myInput {
   background-image: url('./img/searchicon.png');
+<<<<<<< HEAD
   background-position: 10px 10px;
   background-repeat: no-repeat;
   width: 100%;
@@ -43,6 +44,15 @@ $pages = ceil($total / $perPage);
   padding: 12px 20px 12px 40px;
   border: 1px solid #ddd;
   margin-bottom: 12px;
+=======
+  background-position: 6px 6px;
+  background-repeat: no-repeat;
+  font-size: 14px;
+  padding: 11px 5px 2px 35px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+  margin-left: 1.5in;
+>>>>>>> 84e10a09b027b332283f15672992a112148b2ee7
 }
 
 #myTable {
@@ -73,31 +83,39 @@ $pages = ceil($total / $perPage);
 	?>
 	<div class="container">
 		<div class="col-lg-12">
-			<div class="row productlist_line">
-				<div class="col-md-7" >
-					<h2>Product List</h2>
-				</div>
-				<div class="col-md-5 text-right" style="padding-top:20px;">
-	                <a href="productcreate.php" class="btn btn-success btn-md"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp; Add Product</a>
-				</div>
-			</div>	
-			<div class="controls">
-	       		<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search.." title="Type in" style="width: 3in">
-	       		<div class="pull-right">
-					<label class="control-label">Filter</label>                   		
-	       			<select id="filters" class="form-control" name="filters" onChange="myFilter()" placeholder="Product Category">
-				     	<option></option>
-				    	<option>Accepted</option>
-				    	<option>Deferred</option>
-				    	<option>Pending</option>
-				    	<option>Temporarily Deferred</option>
-			    	</select>
-	       		</div>
-					    
-		  	</div>
+				<div class="row productlist_line">
+					<div class="col-md-7" >
+						<h2>Products</h2>
+					</div>	
+				</div>	
+					<div class="controls">
+			       		<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search.." title="Type in" style="width: 3in">
+
+			       		<div class="pull-right">
+			       		<a href="productcreate.php" class="btn btn-success btn-md"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp; Add Product</a>
+			       		</div>
+
+
+			       		<div class="pull-left">
+			       			<div class="col-lg-12">
+			       				<select id="category" class="form-control" name="category" onChange="category()">
+						     	<option value="" disabled selected hidden> Product Category..</option>
+						    	<option>Vase</option>
+						    	<option>Lamps</option>
+						    	<option>Tables</option>
+						    	<option>Wall Decors</option>
+					    		</select>
+
+			       			</div>
+			       		</div>			    
+					</div>
+		</div>
+	</div>
 	      	<br>
 			<div class="table-responsive">
-                <table class="table table-hover table-striped" id="myTable">
+
+				<div class="container">
+					<table class="table table-hover table-striped" id="myTable">
 					<thead>
 						<tr class="alert-info">
 							<th>Product ID</th>
@@ -149,6 +167,12 @@ $pages = ceil($total / $perPage);
 						?>
 					</tbody>
 				</table>
+<<<<<<< HEAD
+=======
+
+				</div>
+                
+>>>>>>> 84e10a09b027b332283f15672992a112148b2ee7
 			</div> 	
 
 <!--edit @ footer.php-->

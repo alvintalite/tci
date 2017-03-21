@@ -20,10 +20,10 @@
 <body>
 	<nav class="navbar navbar-inverse">
         <div class="container-fluid header">
-        	<a href="#" class="white">Tumandok Craft Industries</a>       
-             <div class="pull-right menu">
+        	<a href="header.php" class="white">Tumandok Craft Industries</a>       
+             <div class="pull-right menu ">
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>Josephine Locsin <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle white" data-toggle="dropdown"><i class="fa fa-user"></i>Josephine Locsin <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -43,7 +43,7 @@
             </div>
 	        <div class="pull-right menu">
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle white" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu alert-dropdown">
                         <li>
                             <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
@@ -80,15 +80,24 @@
             <span class="icon-bar"></span>                        
         </button>
         <div class="collapse navbar-collapse container modules fontsizeheader" >
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav modules">
                 <li class="dropdown">
-                    <a href="#" data-toggle="dropdown">PROFILES</a>
+                    <a href="#" data-toggle="dropdown white">PROFILES</a>
                     <ul class="dropdown-menu">
                         <li><a href="productlist.php"  class="fontsizeheader">PRODUCTS</a></li>
-                        <li><a href="#"  class="fontsizeheader">INVENTORY</a></li>
-                        <li><a href="#"  class="fontsizeheader">ORDERS</a></li>   
-                    </ul>
+                        <li><a href="#"  class="fontsizeheader">CUSTOMER</a></li>
+                        <li><a href="#"  class="fontsizeheader">EMPLOYEES</a></li>
+                    </ul>                        
                 </li>
+                    <li class="menu">
+                         <a href="#">INVENTORY</a>    
+                    </li>
+                    <li class="menu">
+                         <a href="#">ORDERS</a>    
+                    </li>
+                    <li class="menu">
+                         <a href="#">REPORTS</a>    
+                    </li>
             </ul>
         </div> 
 	</nav>
