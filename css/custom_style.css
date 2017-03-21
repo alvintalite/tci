@@ -76,8 +76,8 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 
 .alert-info{
     color: #333 !important;
-    background-color: #ffd5d5 !important;
-    border-color: #ffd5d5 !important;
+    background-color: rgba(93, 255, 26, 0.59) !important;
+    border-color: rgba(93, 255, 26, 0.59) !important;
 }
 
 .table-striped{

@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Mattress A Ecommerce Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<title>Mattress A Ecommerce Category Flat Bootstrap Responsive Website Template | single :: w3layouts</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>
@@ -28,6 +28,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="text/javascript" src="js/memenu.js"></script>
 <script>$(document).ready(function(){$(".memenu").memenu();});</script>
 <script src="js/simpleCart.min.js"> </script>
+<script src="js/imagezoom.js"></script>
 </head>
 <body>
 <!--header-->
@@ -199,9 +200,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						  </div>
 						</div>
-			    </li>
-				<li><a class="color4" href="login.php">Login</a></li>				
+			    </li>		
+				<li><a class="color4" href="login.html">Login</a></li>				
 				<li><a class="color6" href="contact.html">Contact</a></li>
+				<div class="clearfix"> </div>
 			  </ul> 
 			</div>
 				
@@ -209,168 +211,151 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		</div>
 	</div>
-	<div class="banner">
+	<!-- grow -->
+	<div class="grow">
 		<div class="container">
-			  <script src="js/responsiveslides.min.js"></script>
-  <script>
-    $(function () {
-      $("#slider").responsiveSlides({
-      	auto: true,
-      	nav: true,
-      	speed: 500,
-        namespace: "callbacks",
-        pager: true,
-      });
-    });
-  </script>
-			<div  id="top" class="callbacks_container">
-			<ul class="rslides" id="slider">
-			    <li>
-					
-						<div class="banner-text">
-							<h3>Lorem Ipsum is   </h3>
-						<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
-						
-						</div>
+			<h2>Single</h2>
+		</div>
+	</div>
+	<!-- grow -->
+		<div class="product">
+			<div class="container">
 				
-				</li>
-				<li>
-					
-						<div class="banner-text">
-							<h3>There are many  </h3>
-						<p>Popular belief Contrary to , Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
-												
+				<div class="product-price1">
+				<div class="top-sing">
+				<div class="col-md-7 single-top">	
+						<div class="flexslider">
+			  <ul class="slides">
+			    <li data-thumb="images/si.jpg">
+			        <div class="thumb-image"> <img src="images/si.jpg" data-imagezoom="true" class="img-responsive"> </div>
+			    </li>
+			    <li data-thumb="images/si1.jpg">
+			         <div class="thumb-image"> <img src="images/si1.jpg" data-imagezoom="true" class="img-responsive"> </div>
+			    </li>
+			    <li data-thumb="images/si2.jpg">
+			       <div class="thumb-image"> <img src="images/si2.jpg" data-imagezoom="true" class="img-responsive"> </div>
+			    </li> 
+				 <li data-thumb="images/si3.jpg">
+			       <div class="thumb-image"> <img src="images/si3.jpg" data-imagezoom="true" class="img-responsive"> </div>
+			    </li>
+			  </ul>
+		</div>
 
-						</div>
-					
-				</li>
-				<li>
-						<div class="banner-text">
-							<h3>Sed ut perspiciatis</h3>
-						<p>Lorem Ipsum is not simply random text. Contrary to popular belief, It has roots in a piece of classical Latin literature from 45 BC.</p>
+	<div class="clearfix"> </div>
+<!-- slide -->
+
+
+						<!-- FlexSlider -->
+  <script defer src="js/jquery.flexslider.js"></script>
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+
+<script>
+// Can also be used with $(document).ready()
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide",
+    controlNav: "thumbnails"
+  });
+});
+</script>
+
+	
+	
+	
+	
+	
+	
+					</div>	
+					<div class="col-md-5 single-top-in simpleCart_shelfItem">
+						<div class="single-para ">
+						<h4>Lorem Ipsum</h4>
+							<div class="star-on">
 								
-
-						</div>
-					
-				</li>
-			</ul>
-		</div>
-
-	</div>
-	</div>
-
-<!--content-->
-<div class="container">
-	<div class="cont">
-		<div class="content">
-			<div class="content-top-bottom">
-				<h2>Featured PRODUCTS</h2>
-				<div class="col-md-6 men">
-					<a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="images/t1.jpg" alt="">
-						<div class="b-wrapper">
-											<h3 class="b-animate b-from-top top-in   b-delay03 ">
-												<span>TRIBECA LIVING</span>	
-											</h3>
-										</div>
-					</a>
-					
-					
-				</div>
-				<div class="col-md-6">
-					<div class="col-md1 ">
-						<a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="images/t2.jpg" alt="">
-							<div class="b-wrapper">
-											<h3 class="b-animate b-from-top top-in1   b-delay03 ">
-												<span>CLARISSA</span>	
-											</h3>
-										</div>
-						</a>
-						
-					</div>
-					<div class="col-md2">
-						<div class="col-md-6 men1">
-							<a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="images/t3.jpg" alt="">
-									<div class="b-wrapper">
-											<h3 class="b-animate b-from-top top-in2   b-delay03 ">
-												<span>COLORMATE</span>	
-											</h3>
-										</div>
-							</a>
-							
-						</div>
-						<div class="col-md-6 men2">
-							<a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="images/t4.jpg" alt="">
-									<div class="b-wrapper">
-											<h3 class="b-animate b-from-top top-in2   b-delay03 ">
-												<span>HERLEQUIN</span>	
-											</h3>
-										</div>
-							</a>
-							
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="content-top">
-				<h1>NEW PRODUCTS</h1>
-				<div class="grid-in">
-					<div class="col-md-3 grid-top simpleCart_shelfItem">
-						<a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="images/pi.jpg" alt="">
-							<div class="b-wrapper">
-								<h3 class="b-animate b-from-left    b-delay03 ">
-									<span>TRIBECA LIVING</span>
+								<div class="review">
+									<a href="#"> 1 customer review </a>
 									
-								</h3>
-							</div>
-						</a>
-				
-
-					<p><a href="single.html">TRIBECA LIVING</a></p>
-					<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>
-					</div>
-					<div class="col-md-3 grid-top simpleCart_shelfItem">
-						<a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="images/pi1.jpg" alt="">
-							<div class="b-wrapper">
-											<h3 class="b-animate b-from-left    b-delay03 ">
-												<span>ESSENTIAL</span>	
-											</h3>
-										</div>
-						</a>
-					<p><a href="single.html">ESSENTIAL</a></p>
-					<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>
-					</div>
-					<div class="col-md-3 grid-top simpleCart_shelfItem">
-						<a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="images/pi2.jpg" alt="">
-							<div class="b-wrapper">
-											<h3 class="b-animate b-from-left    b-delay03 ">
-												<span>CLARISSA</span>	
-											</h3>
-										</div>
-						</a>
-					<p><a href="single.html">CLARISSA</a></p>
-					<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>
-					</div>
-					<div class="col-md-3 grid-top">
-						<a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="images/pi4.jpg" alt="">
-							<div class="b-wrapper">
-											<h3 class="b-animate b-from-left    b-delay03 ">
-												<span>LITTLE HOME</span>	
-											</h3>
-										</div>
-						</a>
-					<p><a href="single.html">LITTLE HOME</a></p>
-					<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>
-					</div>
+								</div>
 							<div class="clearfix"> </div>
+							</div>
+							
+							<h5 class="item_price">$ 500.00</h5>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed 
+diam nonummy nibh euismod tincidunt ut laoreet dolore 
+magna aliquam erat </p>
+							<div class="available">
+								<ul>
+									<li>Color
+										<select>
+										<option>Silver</option>
+										<option>Black</option>
+										<option>Dark Black</option>
+										<option>Red</option>
+									</select></li>
+								<li class="size-in">Size<select>
+									<option>Large</option>
+									<option>Medium</option>
+									<option>small</option>
+									<option>Large</option>
+									<option>small</option>
+								</select></li>
+								<div class="clearfix"> </div>
+							</ul>
+						</div>
+							
+								<a href="#" class="add-cart item_add">ADD TO CART</a>
+							
+						</div>
+					</div>
+				<div class="clearfix"> </div>
 				</div>
-			</div>
-		</div>
-	<!----->
-	</div>
-	<!---->
+			<!---->
+
+		<div class=" bottom-product">
+					<div class="col-md-4 bottom-cd simpleCart_shelfItem">
+						<div class="product-at ">
+							<a href="#"><img class="img-responsive" src="images/pi3.jpg" alt="">
+							<div class="pro-grid">
+										<span class="buy-in">Buy Now</span>
+							</div>
+						</a>	
+						</div>
+						<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
+						<div class="ca-rt">
+							<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>						
+						</div>						
+					</div>
+					<div class="col-md-4 bottom-cd simpleCart_shelfItem">
+						<div class="product-at ">
+							<a href="#"><img class="img-responsive" src="images/pi1.jpg" alt="">
+							<div class="pro-grid">
+										<span class="buy-in">Buy Now</span>
+							</div>
+						</a>	
+						</div>
+						<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
+						<div class="ca-rt">
+							<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>						
+						</div>					</div>
+					<div class="col-md-4 bottom-cd simpleCart_shelfItem">
+						<div class="product-at ">
+							<a href="#"><img class="img-responsive" src="images/pi4.jpg" alt="">
+							<div class="pro-grid">
+										<span class="buy-in">Buy Now</span>
+							</div>
+						</a>	
+						</div>
+						<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
+						<div class="ca-rt">
+							<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>						
+						</div>					</div>
+					<div class="clearfix"> </div>
+				</div>
 </div>
+
+		<div class="clearfix"> </div>
+		</div>
+		</div>
+<!--//content-->
 <div class="footer w3layouts">
 				<div class="container">
 			<div class="footer-top-at w3">

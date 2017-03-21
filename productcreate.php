@@ -72,10 +72,7 @@
 										<div class="controls">
 											<select class="form-control" name="pc_name" id="pc_name">
 												<option></option>
-												<option>House Ware</option>
-												<option>B</option>
-												<option>AB</option>
-												<option>O</option>
+												<option>Houseware</option>
 											</select>
 										</div>
 								</div>
@@ -90,9 +87,9 @@
 
 							<div class="col-lg-6">
 								<div class="control-group">
-									<label class="control-label" for="pg_id">Group</label>
+									<label class="control-label" for="pg_name">Group</label>
 										<div class="controls">
-											<select class="form-control" name="pg_id" id="pg_id">
+											<select class="form-control" name="pg_name" id="pg_name">
 												<option></option>
 												<option>Bowl</option>
 												<option>Bowl</option>
@@ -100,20 +97,36 @@
 										</div>
 								</div>
 							</div>
-							
-
-							<!-- Text input-->
 
 							<div class="col-lg-6">
 								<div class="control-group">
-									  <label class="control-label" for="dnationality">Nationality</label>
-									  	<div class="controls">
-									    	<input id="dnationality" name="dnationality" type="text" placeholder="Nationality" class="form-control" required="">
-									    
-									  	</div>
+									<label for="dimension" class="control-label">Dimension</label>
+								</div>
+								<div class="col-lg-4">
+									<div class="control-group">
+										<label for="" class="control-label">Length</label>
+										<div class="controls">
+											<input type="number" step="0.01" class="form-control" name="prod_length" required>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="control-group">
+										<label for="" class="control-label">Width</label>
+										<div class="controls">
+											<input type="number" step="0.01" class="form-control" name="prod_width" required>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="control-group">
+										<label for="" class="control-label">Height</label>
+										<div class="controls">
+											<input type="number" step="0.01" class="form-control" name="prod_height" required>
+										</div>
+									</div>
 								</div>
 							</div>
-
 					</div>
 							<!--Buttons-->
 							<div class="panel-footer">	

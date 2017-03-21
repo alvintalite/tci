@@ -3,28 +3,15 @@
 ?>
 <?php 
 	require 'database.php';
+	include 'login_success.php';
 
-// User Input
-$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-$perPage = isset($_GET['per-page']) && $_GET['per-page'] <= 50 ? (int)$_GET['per-page'] : 100;
-
-// Positioning
-$start = ($page > 1) ? ($page * $perPage) - $perPage : 0;
-
-// Query
 $pdo = Database::connect();
 $product = $pdo->prepare("
 	SELECT SQL_CALC_FOUND_ROWS * 
 	FROM product 
-	LIMIT {$start},{$perPage}
 ");
 $product->execute();
-
 $product = $product->fetchAll(PDO::FETCH_ASSOC);
-
-// Pages
-$total = $pdo->query("SELECT FOUND_ROWS() as total")->fetch()['total'];
-$pages = ceil($total / $perPage);
 ?>
 <!--Start of Html-->
 <!DOCTYPE html>
@@ -36,15 +23,6 @@ $pages = ceil($total / $perPage);
 
 #myInput {
   background-image: url('./img/searchicon.png');
-<<<<<<< HEAD
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  width: 100%;
-  font-size: 14px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
-=======
   background-position: 6px 6px;
   background-repeat: no-repeat;
   font-size: 14px;
@@ -52,7 +30,6 @@ $pages = ceil($total / $perPage);
   border: 1px solid #ddd;
   margin-bottom: 12px;
   margin-left: 1.5in;
->>>>>>> 84e10a09b027b332283f15672992a112148b2ee7
 }
 
 #myTable {
@@ -115,7 +92,7 @@ $pages = ceil($total / $perPage);
 			<div class="table-responsive">
 
 				<div class="container">
-					<table class="table table-hover table-striped" id="myTable">
+					<table class="table" id="myTable">
 					<thead>
 						<tr class="alert-info">
 							<th>Product ID</th>
@@ -127,39 +104,28 @@ $pages = ceil($total / $perPage);
 						</tr>
 					</thead>	
 					<tbody>					
-						<?php					
-							$pdo2 = Database::connect();
-							$pdo2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-							$sql2 = $pdo2->prepare("
-									SELECT * FROM productfinish WHERE pf_id = ? 
-								");	
-							$pdo3 = Database::connect();
-							$pdo3->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-							$sql3 = $pdo3->prepare("
-									SELECT * FROM productcategory WHERE pc_id = ? 
-								");	
-
+						<?php				
 							foreach ($product as $row) {
-									$sql2->execute(array($row['did']));
-									$data1 = $sql2->fetchAll(PDO::FETCH_ASSOC);
+								// $query = $pdo->prepare("SELECT pf_id FROM productfinish WHERE pf_name = ?");
+								// $query->execute(array($row['pf_name']));
+								// $pf = $query->fetch(PDO::FETCH_ASSOC);
 
-									$sql3->execute(array($row['did']));
-									$data2 = $sql3->fetchAll(PDO::FETCH_ASSOC);
+								$query = $pdo->prepare("SELECT * FROM productcategory WHERE pc_id = ?");
+								$query->execute(array($row['pc_id']));
+								$pc = $query->fetch(PDO::FETCH_ASSOC);
 
-									$pdo4 = Database::connect();
-									$pdo4->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-									$sql4 = $pdo4->prepare("SELECT * FROM bloodinformation WHERE bloodid = ?");
-									$sql4->execute(array($row['bloodinfo']));
-									$data3 = $sql4->fetch(PDO::FETCH_ASSOC);
+								// $query = $pdo->prepare("SELECT pg_id FROM productgroup WHERE pg_name = ?");
+								// $query->execute(array($row['pg_name']));
+								// $pg = $query->fetch(PDO::FETCH_ASSOC);
 
 								echo '<tr>';
-									echo '<td>'.$row['did'] . '</td>';
-									echo '<td>'.$row['dfname']. ' ' . substr($row['dmname'],0,1) .'. ' . $row['dlname'].'</td>';
-									echo '<td>'.$row['dregdate'].'</td>';
-									echo '<td>'.$row['dremarks'].'</td>';
-									echo '<td>'.$data3['bloodgroup']. ' ' . $data3['rhtype'].'</td>';
+									echo '<td>'.$row['prod_id'] . '</td>';
+									echo '<td>'.$row['prod_name']. '</td>';
+									echo '<td>'.$pc['pc_name'].'</td>';
+									echo '<td>'.' Php '.$row['prod_price'].'</td>';
+									echo '<td>'.$row['prod_length'].' x '. $row['prod_width'] . ' x ' . $row['prod_height'] .'</td>';
 									echo '<td class="text-center">
-												<a class="btn btn-primary btn-md" href="viewdonor.php?id='.$row['did'].'" data-toggle="tooltip" title="View"><span class="glyphicon glyphicon-edit"></span></a>
+												<a class="btn btn-primary btn-md" href="#" data-toggle="tooltip" title="View"><span class="glyphicon glyphicon-edit"></span></a>
 								  		  </td>';									
 								echo '</tr>';
 							}
@@ -167,12 +133,7 @@ $pages = ceil($total / $perPage);
 						?>
 					</tbody>
 				</table>
-<<<<<<< HEAD
-=======
-
-				</div>
-                
->>>>>>> 84e10a09b027b332283f15672992a112148b2ee7
+				</div>               
 			</div> 	
 
 <!--edit @ footer.php-->

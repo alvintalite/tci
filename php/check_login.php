@@ -7,14 +7,19 @@ session_start();
     $user=$_POST['email'];
     $pass=$_POST['password'];
     $pdo = Database::connect();
-    $query = $pdo->prepare("SELECT user_id FROM account WHERE 
+    $query = $pdo->prepare("SELECT * FROM account WHERE 
                          user_name='$user' and user_pass='$pass'");
     $query->execute();
     $count = $query->fetch(PDO::FETCH_ASSOC);
     if($count!="")
     {
         $_SESSION['login_username']=$user;
-        header("Location:../header.php"); 
+        if($count['user_type'] == 'admin'){
+           header("Location:../header.php"); 
+        }else{
+            header("Location:../index.php");
+        }     
+         
     }
     else
     {
