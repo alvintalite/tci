@@ -84,10 +84,19 @@
                     <a href="#" data-toggle="dropdown">PROFILES</a>
                     <ul class="dropdown-menu">
                         <li><a href="productlist.php"  class="fontsizeheader">PRODUCTS</a></li>
-                        <li><a href="#"  class="fontsizeheader">INVENTORY</a></li>
-                        <li><a href="#"  class="fontsizeheader">ORDERS</a></li>   
-                    </ul>
+                        <li><a href="#"  class="fontsizeheader">CUSTOMER</a></li>
+                        <li><a href="#"  class="fontsizeheader">EMPLOYEES</a></li>
+                    </ul>                        
                 </li>
+                    <li class="menu">
+                         <a href="#">INVENTORY</a>    
+                    </li>
+                    <li class="menu">
+                         <a href="#">ORDERS</a>    
+                    </li>
+                    <li class="menu">
+                         <a href="#">REPORTS</a>    
+                    </li>
             </ul>
         </div> 
 	</nav>

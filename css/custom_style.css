@@ -16,6 +16,7 @@
 
 .modules{
     background-color: rgb(192, 214, 155) !important;
+
 }
 
 .white{
@@ -63,9 +64,9 @@
 }
 
 .menu{
-    color:white !important;
-    margin-right:10px !important;
-    margin-left:10px !important;
+    color:black !important;
+    margin-left:50px !important;
+    margin-right: 5px;
 }
 
 ul.nav li.dropdown:hover > ul.dropdown-menu {
@@ -89,3 +90,4 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
     margin-bottom:13px;
     
 }
+
