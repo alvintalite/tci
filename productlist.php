@@ -113,12 +113,12 @@ $pages = ceil($total / $perPage);
 							$pdo2 = Database::connect();
 							$pdo2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 							$sql2 = $pdo2->prepare("
-									SELECT * FROM examination WHERE examid = ? 
+									SELECT * FROM productfinish WHERE pf_id = ? 
 								");	
 							$pdo3 = Database::connect();
 							$pdo3->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 							$sql3 = $pdo3->prepare("
-									SELECT * FROM screening WHERE scrid = ? 
+									SELECT * FROM productcategory WHERE pc_id = ? 
 								");	
 
 							foreach ($product as $row) {

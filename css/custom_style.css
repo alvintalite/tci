@@ -80,11 +80,12 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 }
 
 .table-striped{
-    margin-top: 40px;
+    margin-top: 2px;
 }
 
 .productlist_line{
 
     border-bottom:solid 1px;
-    margin-bottom:15px;
+    margin-bottom:13px;
+    
 }
