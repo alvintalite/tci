@@ -29,7 +29,7 @@
 					</div>
 					
 					<div class="panel-body">
-						<form class="form-horizontal" action="./php/addemployee.php" method="post">
+						<form class="form-horizontal" action="php/addemployee.php" method="post">
 
 							<!-- Text input-->
 							<div class="col-lg-6">
@@ -82,7 +82,7 @@
 								<div class="control-group">
 							  		<label class="control-label" for="emp_position">Position</label>
 							  		<div class="controls">
-							    		<input id="emp_position" name="emp_position type="text" placeholder="Position" class="form-control" required="">						    
+							    		<input id="emp_position" name="emp_position" type="text" placeholder="Position" class="form-control" required="">						    
 							  		</div>
 								</div>
 							</div>
@@ -98,7 +98,6 @@
 							</div>
 
 						</div>
-					</div>
 							<!--Buttons-->
 							<div class="panel-footer">	
 								<div class="form-actions text-center forms">

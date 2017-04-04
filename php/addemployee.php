@@ -8,13 +8,6 @@
 	$emp_password = $_POST['emp_password'];
 	$emp_conpassword = $_POST['emp_conpassword'];
 	$emp_position = $_POST['emp_position'];
-	
-	
-
-	$query = $pdo->prepare("SELECT emp_id FROM employee WHERE emp_name = ?");
-	$query->execute(array($emp_name));
-	$emp = $query->fetch(PDO::FETCH_ASSOC);
-
 
 	$query = $pdo->prepare("INSERT INTO employee(emp_name, emp_address, emp_email, emp_password, emp_conpassword, emp_position) VALUES(?, ?, ?, ?, ?, ?)");
 	$query->execute(array($emp_name, $emp_address, $emp_email, $emp_password, $emp_conpassword, $emp_position));	

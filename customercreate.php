@@ -105,7 +105,6 @@
 							</div>
 
 						</div>
-					</div>
 							<!--Buttons-->
 							<div class="panel-footer">	
 								<div class="form-actions text-center forms">
