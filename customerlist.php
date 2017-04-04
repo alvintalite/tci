@@ -6,12 +6,12 @@
 	include 'login_success.php';
 
 $pdo = Database::connect();
-$product = $pdo->prepare("
+$customer = $pdo->prepare("
 	SELECT SQL_CALC_FOUND_ROWS * 
-	FROM product 
+	FROM customer 
 ");
-$product->execute();
-$product = $product->fetchAll(PDO::FETCH_ASSOC);
+$customer->execute();
+$customer = $customer->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!--Start of Html-->
 <!DOCTYPE html>
@@ -29,7 +29,7 @@ $product = $product->fetchAll(PDO::FETCH_ASSOC);
   padding: 11px 5px 2px 35px;
   border: 1px solid #ddd;
   margin-bottom: 12px;
-  margin-left: 1.5in;
+  margin-left: 1px;
 }
 
 #myTable {
@@ -62,29 +62,14 @@ $product = $product->fetchAll(PDO::FETCH_ASSOC);
 		<div class="col-lg-12">
 				<div class="row productlist_line">
 					<div class="col-md-7" >
-						<h2>Products</h2>
+						<h2>Customer</h2>
 					</div>	
 				</div>	
 					<div class="controls">
-			       		<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search.." title="Type in" style="width: 3in">
+			       		<input type="text"  id="myInput" onkeyup="myFunction()" placeholder="Search.." title="Type in" style="width: 3in">
 
 			       		<div class="pull-right">
-			       		<a href="productcreate.php" class="btn btn-success btn-md"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp; Add Product</a>
-			       		</div>
-
-
-			       		<div class="pull-left">
-			       			<div class="col-lg-12">
-			       				<select id="category" class="form-control" name="category" onChange="category()">
-						     	<option value="" disabled selected hidden> Product Category..</option>
-						    	<option>Vase</option>
-						    	<option>Lamps</option>
-						    	<option>Tables</option>
-						    	<option>Wall Decors</option>
-						    	<option>Houseware</option>
-					    		</select>
-
-			       			</div>
+			       		<a href="customercreate.php" class="btn btn-success btn-md"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp; Add Customer</a>
 			       		</div>			    
 					</div>
 		</div>
@@ -96,35 +81,33 @@ $product = $product->fetchAll(PDO::FETCH_ASSOC);
 					<table class="table" id="myTable">
 					<thead>
 						<tr class="alert-info">
-							<th>Product ID</th>
-							<th>Product Name</th>
-							<th>Category</th>
-							<th>Price</th>
-							<th>Size/Dimensions</th>
+							<th>Customer ID</th>
+							<th>Customer Name</th>
+							<th>Email</th>
+							<th>Contact Number</th>							
 							<th class="text-center">Action</th>
 						</tr>
 					</thead>	
 					<tbody>					
 						<?php				
-							foreach ($product as $row) {
+							foreach ($customer as $row) {
 								// $query = $pdo->prepare("SELECT pf_id FROM productfinish WHERE pf_name = ?");
 								// $query->execute(array($row['pf_name']));
 								// $pf = $query->fetch(PDO::FETCH_ASSOC);
 
-								$query = $pdo->prepare("SELECT * FROM productcategory WHERE pc_id = ?");
-								$query->execute(array($row['pc_id']));
-								$pc = $query->fetch(PDO::FETCH_ASSOC);
+								// $query = $pdo->prepare("SELECT * FROM productcategory WHERE pc_id = ?");
+								// $query->execute(array($row['pc_id']));
+								// $pc = $query->fetch(PDO::FETCH_ASSOC);
 
 								// $query = $pdo->prepare("SELECT pg_id FROM productgroup WHERE pg_name = ?");
 								// $query->execute(array($row['pg_name']));
 								// $pg = $query->fetch(PDO::FETCH_ASSOC);
 
 								echo '<tr>';
-									echo '<td>'.$row['prod_id'] . '</td>';
-									echo '<td>'.$row['prod_name']. '</td>';
-									echo '<td>'.$pc['pc_name'].'</td>';
-									echo '<td>'.' Php '.$row['prod_price'].'</td>';
-									echo '<td>'.$row['prod_length'].' x '. $row['prod_width'] . ' x ' . $row['prod_height'] .'</td>';
+									echo '<td>'.$row['cust_id'] . '</td>';
+									echo '<td>'.$row['cust_name']. '</td>';
+									echo '<td>'.$row['cust_email'].'</td>';
+									echo '<td>'.$row['cust_contactnumber'].'</td>';
 									echo '<td class="text-center">
 												<a class="btn btn-primary btn-md" href="#" data-toggle="tooltip" title="View"><span class="glyphicon glyphicon-edit"></span></a>
 								  		  </td>';									

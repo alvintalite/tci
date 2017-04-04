@@ -73,6 +73,7 @@
 											<select class="form-control" name="pc_name" id="pc_name">
 												<option></option>
 												<option>Houseware</option>
+												<option>Wall Decors</option>
 											</select>
 										</div>
 								</div>

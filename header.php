@@ -85,8 +85,8 @@
                     <a href="#" data-toggle="dropdown white">PROFILES</a>
                     <ul class="dropdown-menu">
                         <li><a href="productlist.php"  class="fontsizeheader">PRODUCTS</a></li>
-                        <li><a href="#"  class="fontsizeheader">CUSTOMER</a></li>
-                        <li><a href="#"  class="fontsizeheader">EMPLOYEES</a></li>
+                        <li><a href="customerlist.php"  class="fontsizeheader">CUSTOMER</a></li>
+                        <li><a href="employeelist.php"  class="fontsizeheader">EMPLOYEES</a></li>
                     </ul>                        
                 </li>
                     <li class="menu">

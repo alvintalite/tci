@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2017 at 12:21 AM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 5.5.38
+-- Generation Time: Apr 04, 2017 at 06:49 AM
+-- Server version: 10.1.10-MariaDB
+-- PHP Version: 5.6.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -45,6 +45,48 @@ INSERT INTO `account` (`user_id`, `user_name`, `user_pass`, `user_type`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `customer`
+--
+
+CREATE TABLE `customer` (
+  `cust_id` int(11) NOT NULL,
+  `cust_name` varchar(50) NOT NULL,
+  `cust_email` varchar(30) NOT NULL,
+  `cust_address` varchar(50) NOT NULL,
+  `cust_password` varchar(15) NOT NULL,
+  `cust_conpassword` varchar(15) NOT NULL,
+  `cust_contactnumber` varchar(13) NOT NULL,
+  `buy_agent` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`cust_id`, `cust_name`, `cust_email`, `cust_address`, `cust_password`, `cust_conpassword`, `cust_contactnumber`, `buy_agent`) VALUES
+(1, 'sdfsdfsdfsf', '', 'dasdasdsad', '12312312312312', '132312312312', 'adasdsadasd', 'adasdsadad'),
+(2, 'dddd', '', 'dadsadsad', 'ddd', '3123123', '12312312', 'dasdadada'),
+(3, 'dsfsdfsfsdf', 'asdasdasd', 'fsdfsdfsd', '3123123123', 'sdasdasd', 'adasdsad', '312312312312');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employee`
+--
+
+CREATE TABLE `employee` (
+  `emp_id` int(11) NOT NULL,
+  `emp_name` varchar(50) NOT NULL,
+  `emp_address` varchar(50) NOT NULL,
+  `emp_position` varchar(25) NOT NULL,
+  `emp_password` varchar(12) NOT NULL,
+  `emp_conpassword` varchar(12) NOT NULL,
+  `emp_email` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `product`
 --
 
@@ -70,7 +112,8 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`prod_id`, `prod_name`, `prod_desc`, `prod_price`, `prod_size`, `prod_length`, `prod_height`, `prod_width`, `prod_stock`, `prod_color`, `pf_id`, `pc_id`, `pg_id`) VALUES
 (1, 'Uneven Bowl', 'This is a bowl.', 1500, '', 8.5, 3.4, 0.82, '', '', 1, 1, 1),
-(2, 'Even Bowl', 'This is an even bowl', 1000, '', 8.5, 3, 1, '', '', 2, 1, 1);
+(2, 'Even Bowl', 'This is an even bowl', 1000, '', 8.5, 3, 1, '', '', 2, 1, 1),
+(3, 'sadadasd', 'asdadadasd', 0, '', 0.03, 0.02, 0.02, '', '', 2, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -88,7 +131,8 @@ CREATE TABLE `productcategory` (
 --
 
 INSERT INTO `productcategory` (`pc_id`, `pc_name`) VALUES
-(1, 'Houseware');
+(1, 'Houseware'),
+(2, 'Wall Decors');
 
 -- --------------------------------------------------------
 
@@ -128,6 +172,16 @@ INSERT INTO `productgroup` (`pg_id`, `pg_name`) VALUES
 (1, 'Bowl'),
 (2, 'Furnitures');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sample`
+--
+
+CREATE TABLE `sample` (
+  `sample_A` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --
@@ -137,6 +191,18 @@ INSERT INTO `productgroup` (`pg_id`, `pg_name`) VALUES
 --
 ALTER TABLE `account`
   ADD PRIMARY KEY (`user_id`);
+
+--
+-- Indexes for table `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`cust_id`);
+
+--
+-- Indexes for table `employee`
+--
+ALTER TABLE `employee`
+  ADD PRIMARY KEY (`emp_id`);
 
 --
 -- Indexes for table `product`
@@ -172,15 +238,25 @@ ALTER TABLE `productgroup`
 ALTER TABLE `account`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT for table `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `cust_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `employee`
+--
+ALTER TABLE `employee`
+  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `productcategory`
 --
 ALTER TABLE `productcategory`
-  MODIFY `pc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `pc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `productfinish`
 --
