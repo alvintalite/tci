@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2017 at 06:49 AM
+-- Generation Time: Apr 05, 2017 at 05:52 PM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 5.6.15
 
@@ -56,17 +56,20 @@ CREATE TABLE `customer` (
   `cust_password` varchar(15) NOT NULL,
   `cust_conpassword` varchar(15) NOT NULL,
   `cust_contactnumber` varchar(13) NOT NULL,
-  `buy_agent` varchar(50) NOT NULL
+  `buy_agent` varchar(50) NOT NULL,
+  `cust_gender` varchar(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `customer`
 --
 
-INSERT INTO `customer` (`cust_id`, `cust_name`, `cust_email`, `cust_address`, `cust_password`, `cust_conpassword`, `cust_contactnumber`, `buy_agent`) VALUES
-(1, 'sdfsdfsdfsf', '', 'dasdasdsad', '12312312312312', '132312312312', 'adasdsadasd', 'adasdsadad'),
-(2, 'dddd', '', 'dadsadsad', 'ddd', '3123123', '12312312', 'dasdadada'),
-(3, 'dsfsdfsfsdf', 'asdasdasd', 'fsdfsdfsd', '3123123123', 'sdasdasd', 'adasdsad', '312312312312');
+INSERT INTO `customer` (`cust_id`, `cust_name`, `cust_email`, `cust_address`, `cust_password`, `cust_conpassword`, `cust_contactnumber`, `buy_agent`, `cust_gender`) VALUES
+(1, 'sdfsdfsdfsf', '', 'dasdasdsad', '12312312312312', '132312312312', 'adasdsadasd', 'adasdsadad', ''),
+(2, 'dddd', '', 'dadsadsad', 'ddd', '3123123', '12312312', 'dasdadada', ''),
+(3, 'dsfsdfsfsdf', 'asdasdasd', 'fsdfsdfsd', '3123123123', 'sdasdasd', 'adasdsad', '312312312312', 'male'),
+(4, 'asdadsadadasd', 'ssadsdadasd', 'asdasdasdas', 'asddsad', 'adadas', 'dasdasda', 'asdasda', 'male'),
+(5, 'bintot', '@gmail.com', 'binbin', 'asdasdasdas', 'asdasdsadsad', 'dasdadasd', 'adasda', 'male');
 
 -- --------------------------------------------------------
 
@@ -81,8 +84,16 @@ CREATE TABLE `employee` (
   `emp_position` varchar(25) NOT NULL,
   `emp_password` varchar(12) NOT NULL,
   `emp_conpassword` varchar(12) NOT NULL,
-  `emp_email` varchar(50) NOT NULL
+  `emp_email` varchar(50) NOT NULL,
+  `emp_gender` varchar(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `employee`
+--
+
+INSERT INTO `employee` (`emp_id`, `emp_name`, `emp_address`, `emp_position`, `emp_password`, `emp_conpassword`, `emp_email`, `emp_gender`) VALUES
+(1, 'binbin', 'ddddddd', 'dd', 'ddd', 'ddd', 'ddd', 'female');
 
 -- --------------------------------------------------------
 
@@ -112,8 +123,8 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`prod_id`, `prod_name`, `prod_desc`, `prod_price`, `prod_size`, `prod_length`, `prod_height`, `prod_width`, `prod_stock`, `prod_color`, `pf_id`, `pc_id`, `pg_id`) VALUES
 (1, 'Uneven Bowl', 'This is a bowl.', 1500, '', 8.5, 3.4, 0.82, '', '', 1, 1, 1),
-(2, 'Even Bowl', 'This is an even bowl', 1000, '', 8.5, 3, 1, '', '', 2, 1, 1),
-(3, 'sadadasd', 'asdadadasd', 0, '', 0.03, 0.02, 0.02, '', '', 2, 2, 1);
+(2, 'Even Bowl', '', 1000, '', 8.5, 3, 1, '', '', 0, 0, 0),
+(3, 'producttest', 'fsdfsfdsfsfdsfsdfsdf', 500, '', 0.03, 0.03, 0.02, '', '', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -241,12 +252,12 @@ ALTER TABLE `account`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `cust_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `cust_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `product`
 --
