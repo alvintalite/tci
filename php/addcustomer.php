@@ -9,6 +9,7 @@
 	$cust_conpassword = $_POST['cust_conpassword'];
 	$cust_contactnumber = $_POST['cust_contactnumber'];
 	$buy_agent = $_POST['buy_agent'];
+	$cust_gender=$_POST['cust_gender'];
 	
 
 	$query = $pdo->prepare("SELECT cust_id FROM customer WHERE cust_name = ?");
@@ -16,8 +17,8 @@
 	$cust = $query->fetch(PDO::FETCH_ASSOC);
 
 
-	$query = $pdo->prepare("INSERT INTO customer(cust_name, cust_address, cust_email, cust_password, cust_conpassword, cust_contactnumber, buy_agent) VALUES(?, ?, ?, ?, ?, ?, ?)");
-	$query->execute(array($cust_name, $cust_address, $cust_email, $cust_password, $cust_conpassword, $cust_contactnumber, $buy_agent));	
+	$query = $pdo->prepare("INSERT INTO customer(cust_name, cust_address, cust_email, cust_password, cust_conpassword, cust_contactnumber, buy_agent, cust_gender) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
+	$query->execute(array($cust_name, $cust_address, $cust_email, $cust_password, $cust_conpassword, $cust_contactnumber, $buy_agent, $cust_gender));	
 
 	header('Location: ../customerlist.php');
 ?>

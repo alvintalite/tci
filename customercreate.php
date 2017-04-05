@@ -55,7 +55,7 @@
 								<div class="control-group">
 							  		<label class="control-label" for="password">Password</label>
 							  		<div class="controls">
-							    		<input id="cust_password" name="cust_password" type="text" placeholder="Password" class="form-control" required="">						    
+							    		<input id="cust_password" name="cust_password" type="password" placeholder="Password" class="form-control" required="">						    
 							  		</div>
 								</div>
 							</div>
@@ -64,7 +64,7 @@
 								<div class="control-group">
 							  		<label class="control-label" for="conpassword">Confirm Password</label>
 							  		<div class="controls">
-							    		<input id="cust_conpassword" name="cust_conpassword" type="text" placeholder="conpassword" class="form-control" required="">						    
+							    		<input id="cust_conpassword" name="cust_conpassword" type="password" placeholder="conpassword" class="form-control" required="">						    
 							  		</div>
 								</div>
 							</div>

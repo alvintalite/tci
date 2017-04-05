@@ -90,7 +90,12 @@ $customer = $customer->fetchAll(PDO::FETCH_ASSOC);
 					</thead>	
 					<tbody>					
 						<?php				
-							foreach ($customer as $row) {
+							require 'database.php';
+							$pdo = Database::connect();
+							$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+							$sql = 'SELECT * FROM customer ORDER BY cust_id DESC';
+
+							foreach ($pdo->query($sql) as $row) {
 								// $query = $pdo->prepare("SELECT pf_id FROM productfinish WHERE pf_name = ?");
 								// $query->execute(array($row['pf_name']));
 								// $pf = $query->fetch(PDO::FETCH_ASSOC);
@@ -109,7 +114,7 @@ $customer = $customer->fetchAll(PDO::FETCH_ASSOC);
 									echo '<td>'.$row['cust_email'].'</td>';
 									echo '<td>'.$row['cust_contactnumber'].'</td>';
 									echo '<td class="text-center">
-												<a class="btn btn-primary btn-md" href="#" data-toggle="tooltip" title="View"><span class="glyphicon glyphicon-edit"></span></a>
+												<a class="btn btn-primary btn-md" href="customerupdate.php?id='.$row['cust_id'].'" data-toggle="tooltip" title="View"><span class="glyphicon glyphicon-edit"></span></a>
 								  		  </td>';									
 								echo '</tr>';
 							}

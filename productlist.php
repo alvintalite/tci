@@ -106,18 +106,16 @@ $product = $product->fetchAll(PDO::FETCH_ASSOC);
 					</thead>	
 					<tbody>					
 						<?php				
-							foreach ($product as $row) {
-								// $query = $pdo->prepare("SELECT pf_id FROM productfinish WHERE pf_name = ?");
-								// $query->execute(array($row['pf_name']));
-								// $pf = $query->fetch(PDO::FETCH_ASSOC);
+							require 'database.php';
+							$pdo = Database::connect();
+							$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+							$sql = 'SELECT * FROM product ORDER BY prod_id DESC';
 
-								$query = $pdo->prepare("SELECT * FROM productcategory WHERE pc_id = ?");
+							foreach ($pdo->query($sql) as $row) {
+
+							$query = $pdo->prepare("SELECT * FROM productcategory WHERE pc_id = ?");
 								$query->execute(array($row['pc_id']));
-								$pc = $query->fetch(PDO::FETCH_ASSOC);
-
-								// $query = $pdo->prepare("SELECT pg_id FROM productgroup WHERE pg_name = ?");
-								// $query->execute(array($row['pg_name']));
-								// $pg = $query->fetch(PDO::FETCH_ASSOC);
+								$pc = $query->fetch(PDO::FETCH_ASSOC); 	
 
 								echo '<tr>';
 									echo '<td>'.$row['prod_id'] . '</td>';
@@ -126,9 +124,10 @@ $product = $product->fetchAll(PDO::FETCH_ASSOC);
 									echo '<td>'.' Php '.$row['prod_price'].'</td>';
 									echo '<td>'.$row['prod_length'].' x '. $row['prod_width'] . ' x ' . $row['prod_height'] .'</td>';
 									echo '<td class="text-center">
-												<a class="btn btn-primary btn-md" href="#" data-toggle="tooltip" title="View"><span class="glyphicon glyphicon-edit"></span></a>
+												<a class="btn btn-primary btn-md" href="productupdate.php?id='.$row['prod_id'].'" data-toggle="tooltip" title="Update"><span class="glyphicon glyphicon-edit"></span></a>
 								  		  </td>';									
 								echo '</tr>';
+								
 							}
 							Database::disconnect();
 						?>

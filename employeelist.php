@@ -91,7 +91,12 @@ $employee = $employee->fetchAll(PDO::FETCH_ASSOC);
 					</thead>	
 					<tbody>					
 						<?php				
-							foreach ($employee as $row) {
+							require 'database.php';
+							$pdo = Database::connect();
+							$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+							$sql = 'SELECT * FROM employee ORDER BY emp_id DESC';
+
+							foreach ($pdo->query($sql) as $row) {
 								// $query = $pdo->prepare("SELECT pf_id FROM productfinish WHERE pf_name = ?");
 								// $query->execute(array($row['pf_name']));
 								// $pf = $query->fetch(PDO::FETCH_ASSOC);
@@ -111,7 +116,7 @@ $employee = $employee->fetchAll(PDO::FETCH_ASSOC);
 									echo '<td>'.$row['emp_position'].'</td>';
 									echo '<td>'.$row['emp_address'].'</td>';
 									echo '<td class="text-center">
-												<a class="btn btn-primary btn-md" href="#" data-toggle="tooltip" title="View"><span class="glyphicon glyphicon-edit"></span></a>
+												<a class="btn btn-primary btn-md" href="employeeupdate.php?id='.$row['emp_id'].'" data-toggle="tooltip" title="View"><span class="glyphicon glyphicon-edit"></span></a>
 								  		  </td>';									
 								echo '</tr>';
 							}
