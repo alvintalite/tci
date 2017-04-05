@@ -90,7 +90,7 @@
                     </ul>                        
                 </li>
                     <li class="menu">
-                         <a href="#">INVENTORY</a>    
+                         <a href="viewinventory.php">INVENTORY</a>    
                     </li>
                     <li class="menu">
                          <a href="#">ORDERS</a>    

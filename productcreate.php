@@ -58,7 +58,7 @@
 								<div class="control-group">
 							  		<label class="control-label" for="prod_price">Product Price </label>
 							  		<div class="controls">
-							    		<input id="prod_price" name="prod_price" type="text" placeholder="Product Price" class="form-control" required="">
+							    		<input id="prod_price" name="prod_price" step="100" type="number" placeholder="Product Price" class="form-control" required="number">
 							    
 							  		</div>
 								</div>
@@ -78,13 +78,15 @@
 										</div>
 								</div>
 							</div>
-							
+
 							<div class="col-lg-6">
-							 	<div class="control-group">
-                                	<label class="control-label" for="prod_desc">Description</label>
-                                	<textarea class="form-control" rows="5" name="prod_desc" id="prod_desc"></textarea>
-                                </div>
-                            </div>
+									<div class="control-group">
+										<label for="prod_stock" class="control-label">Stock</label>
+										<div class="controls">
+											<input type="number" id="prod_stock" step="1" class="form-control" name="prod_stock" required="number">
+										</div>
+									</div>
+							</div>
 
 							<div class="col-lg-6">
 								<div class="control-group">
@@ -98,6 +100,13 @@
 										</div>
 								</div>
 							</div>
+							
+							<div class="col-lg-6">
+							 	<div class="control-group">
+                                	<label class="control-label" for="prod_desc">Description</label>
+                                	<textarea class="form-control" rows="5" name="prod_desc" id="prod_desc"></textarea>
+                                </div>
+                            </div>
 
 							<div class="col-lg-6">
 								<div class="control-group">
@@ -127,7 +136,9 @@
 										</div>
 									</div>
 								</div>
+								
 							</div>
+							
 					</div>
 							<!--Buttons-->
 							<div class="panel-footer">	

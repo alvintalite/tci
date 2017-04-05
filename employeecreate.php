@@ -92,8 +92,8 @@
 							<div class="col-lg-6">							
 								<div class="control-group">
 								  	<label class="control-label" for="emp_gender">Gender</label><br>
-								  	<input type="radio" name="cgender" value="male" id="emp_gender"> Male
-				  					<input type="radio" name="cgender" value="female" id="emp_gender"> Female
+								  	<input type="radio" name="emp_gender" value="male" id="emp_gender"> Male
+				  					<input type="radio" name="emp_gender" value="female" id="emp_gender"> Female
 								</div>
 							</div>
 

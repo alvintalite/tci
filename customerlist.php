@@ -93,7 +93,7 @@ $customer = $customer->fetchAll(PDO::FETCH_ASSOC);
 							require 'database.php';
 							$pdo = Database::connect();
 							$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-							$sql = 'SELECT * FROM customer ORDER BY cust_id DESC';
+							$sql = 'SELECT * FROM customer ORDER BY cust_id ASC';
 
 							foreach ($pdo->query($sql) as $row) {
 								// $query = $pdo->prepare("SELECT pf_id FROM productfinish WHERE pf_name = ?");

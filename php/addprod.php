@@ -11,6 +11,7 @@
 	$prod_length = $_POST['prod_length'];
 	$prod_width = $_POST['prod_width'];
 	$prod_height = $_POST['prod_height'];
+	$prod_stock= $_POST['prod_stock'];
 
 	$query = $pdo->prepare("SELECT pf_id FROM productfinish WHERE pf_name = ?");
 	$query->execute(array($pf_name));
@@ -24,8 +25,8 @@
 	$query->execute(array($pg_name));
 	$pg = $query->fetch(PDO::FETCH_ASSOC);
 
-	$query = $pdo->prepare("INSERT INTO product(prod_name, prod_desc, prod_price, prod_length, prod_width, prod_height, pf_id, pc_id, pg_id) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)");
-	$query->execute(array($prod_name, $prod_desc, $prod_price, $prod_length, $prod_width, $prod_height, $pf['pf_id'], $pc['pc_id'], $pg['pg_id']));	
+	$query = $pdo->prepare("INSERT INTO product(prod_name, prod_desc, prod_price, prod_length, prod_width, prod_height, pf_id, pc_id, pg_id, prod_stock) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+	$query->execute(array($prod_name, $prod_desc, $prod_price, $prod_length, $prod_width, $prod_height, $pf['pf_id'], $pc['pc_id'], $pg['pg_id'], $prod_stock));	
 
 	header('Location: ../productlist.php');
 ?>
