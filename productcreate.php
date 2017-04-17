@@ -1,5 +1,6 @@
 <?php 
-	// include 'login_success.php';
+	// ini_set('mysql.connect_timeout',300);
+	// ini_set('default_socket_timeout',300);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +30,7 @@
 					</div>
 					
 					<div class="panel-body">
-						<form class="form-horizontal" action="./php/addprod.php" method="post">
+						<form class="form-horizontal" action="./php/addprod.php" enctype="multipart/form-data" method="post">
 
 							<!-- Text input-->
 							<div class="col-lg-6">
@@ -136,6 +137,16 @@
 										</div>
 									</div>
 								</div>
+								<div class="col-lg-4">
+									<div class="control-group">
+										<label for="prod_image" class="control-label">Upload Image</label>
+										<div class="controls">
+											<input type="file" class="btn-upload" name="prod_image">
+
+										</div>
+									</div>
+								</div>
+
 								
 							</div>
 							
@@ -157,9 +168,38 @@
   	</div>
 
 
-<!--edit @ footer.php-->
-<?php
-	include('footer.php');
-?>
+<!-- amu ni sa video len hu.... para ni sa function nga mag get picture..
+ <?php
+	if (isset($_POST['submit']))
+	{
+		if(getimagesize($_FILES['prod_image']['tmp_name'])== FALSE)
+		{
+			echo "Please select an Image.";
+		}
+		else
+		{
+			$prod_image=addslashes($_FILES['prod_image']['tmp_name']);
+			$name=addslashes($_FILES['prod_image']['name']);
+			$prod_image=file_get_contents($prod_image);
+			$prod_image=base64_encode($prod_image);
+		}
+	}
+	function saveimage($name,$prod_image)
+	{
+		$con=mysql_connect("127.0.0.1","root","");
+		mysql_select_db("tcishop",$con);
+		$qry="insert into product(name, prod_image)values('$name', 'prod_image')";
+		$result=mysql_query($qry,$con);
+		if($result)
+		{
+			echo "<br/> Image Uploaded.";
+		}
+		else
+		{
+			echo "<br/> Image not Uploaded.";
+		}
+	}
+?> -->
+
 </body>
 </html>

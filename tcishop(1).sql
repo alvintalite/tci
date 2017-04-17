@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2017 at 05:52 PM
+-- Generation Time: Apr 17, 2017 at 03:22 PM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 5.6.15
 
@@ -93,7 +93,9 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`emp_id`, `emp_name`, `emp_address`, `emp_position`, `emp_password`, `emp_conpassword`, `emp_email`, `emp_gender`) VALUES
-(1, 'binbin', 'ddddddd', 'dd', 'ddd', 'ddd', 'ddd', 'female');
+(1, 'binbin', 'dddddddddd', 'dd', 'ddd', 'ddd', 'ddd', 'male'),
+(2, 'adasda', 'dasdasd', 'dasa', 'adad', 'asdad', 'asdas', 'female'),
+(3, 'adasda', 'dasdasd', 'dasa', 'dasd', 'dasd', 'asdas', 'female');
 
 -- --------------------------------------------------------
 
@@ -110,21 +112,30 @@ CREATE TABLE `product` (
   `prod_length` float NOT NULL,
   `prod_height` float NOT NULL,
   `prod_width` float NOT NULL,
-  `prod_stock` varchar(20) NOT NULL,
+  `prod_stock` varchar(4) NOT NULL,
   `prod_color` varchar(50) NOT NULL,
   `pf_id` int(11) NOT NULL,
   `pc_id` int(11) NOT NULL,
-  `pg_id` int(11) NOT NULL
+  `pg_id` int(11) NOT NULL,
+  `prod_image` longblob NOT NULL,
+  `name` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`prod_id`, `prod_name`, `prod_desc`, `prod_price`, `prod_size`, `prod_length`, `prod_height`, `prod_width`, `prod_stock`, `prod_color`, `pf_id`, `pc_id`, `pg_id`) VALUES
-(1, 'Uneven Bowl', 'This is a bowl.', 1500, '', 8.5, 3.4, 0.82, '', '', 1, 1, 1),
-(2, 'Even Bowl', '', 1000, '', 8.5, 3, 1, '', '', 0, 0, 0),
-(3, 'producttest', 'fsdfsfdsfsfdsfsdfsdf', 500, '', 0.03, 0.03, 0.02, '', '', 0, 0, 0);
+INSERT INTO `product` (`prod_id`, `prod_name`, `prod_desc`, `prod_price`, `prod_size`, `prod_length`, `prod_height`, `prod_width`, `prod_stock`, `prod_color`, `pf_id`, `pc_id`, `pg_id`, `prod_image`, `name`) VALUES
+(1, 'Uneven Bowl', 'This is a bowl.', 1500, '', 8.5, 3.4, 0.82, '', '', 1, 1, 1, '', ''),
+(2, 'Even Bowl', '', 1000, '', 8.5, 3, 1, '', '', 0, 0, 0, '', ''),
+(3, 'producttest', 'fsdfsfdsfsfdsfsdfsdf', 500, '', 0.03, 0.03, 0.02, '', '', 0, 0, 0, '', ''),
+(4, 'asdadasda', 'ddddd', 1, '', 0.02, 0.02, 0.02, '2', '', 1, 2, 1, '', ''),
+(5, 'dasdadasd', '2', 300, '', 0.05, 0.03, 0.04, '5', '', 1, 1, 1, '', ''),
+(6, 'ddddd', 'dddd', 400, '', 0.04, 0.06, 0.03, '4', '', 1, 2, 1, '', ''),
+(7, 'dsdadasdas', '3', 400, '', 0.01, 0.01, 0.01, '2', '', 2, 1, 1, '', ''),
+(8, 'sdadas', '22131321', 200, '', 0.04, 0.02, 0.03, '2', '', 2, 1, 1, '', ''),
+(9, 'adssadadsa', 'asdasdadasd', 300, '', 0.05, 0.04, 0.03, '3', '', 1, 1, 1, '', ''),
+(10, 'sdadadsad', 'sdadas', 400, '', 0.02, 0.02, 0.02, '3', '', 1, 1, 1, '', '');
 
 -- --------------------------------------------------------
 
@@ -257,12 +268,12 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `productcategory`
 --

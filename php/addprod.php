@@ -1,5 +1,6 @@
 <?php 
 	include '../database.php';
+	
 
 	$pdo = Database::connect();
 	$prod_name = $_POST['prod_name'];
@@ -12,6 +13,7 @@
 	$prod_width = $_POST['prod_width'];
 	$prod_height = $_POST['prod_height'];
 	$prod_stock= $_POST['prod_stock'];
+	// $prod_image=$_POST['prod_image'];
 
 	$query = $pdo->prepare("SELECT pf_id FROM productfinish WHERE pf_name = ?");
 	$query->execute(array($pf_name));
