@@ -1,6 +1,5 @@
 <?php 
-	// ini_set('mysql.connect_timeout',300);
-	// ini_set('default_socket_timeout',300);
+	require "database.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -146,10 +145,7 @@
 										</div>
 									</div>
 								</div>
-
-								
 							</div>
-							
 					</div>
 							<!--Buttons-->
 							<div class="panel-footer">	
@@ -168,7 +164,6 @@
   	</div>
 
 
-<!-- amu ni sa video len hu.... para ni sa function nga mag get picture..
  <?php
 	if (isset($_POST['submit']))
 	{
@@ -188,8 +183,12 @@
 	{
 		$con=mysql_connect("127.0.0.1","root","");
 		mysql_select_db("tcishop",$con);
-		$qry="insert into product(name, prod_image)values('$name', 'prod_image')";
+		
 		$result=mysql_query($qry,$con);
+		 $pdo = Database::connect();
+		 $qry="insert into product(name, prod_image) values(?, ?)";
+		 $qry->execute(array($name, $prod_image));
+
 		if($result)
 		{
 			echo "<br/> Image Uploaded.";
@@ -199,7 +198,7 @@
 			echo "<br/> Image not Uploaded.";
 		}
 	}
-?> -->
+?>
 
 </body>
 </html>
