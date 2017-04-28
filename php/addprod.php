@@ -13,6 +13,9 @@
 	$prod_width = $_POST['prod_width'];
 	$prod_height = $_POST['prod_height'];
 	$prod_stock= $_POST['prod_stock'];
+	$prod_image = $_FILES['image']['name'];
+	$destination = "../prod_img/".basename($_FILES['image']['name']);
+	$file = $_FILES['image']['tmp_name'];
 	// $prod_image=$_POST['prod_image'];
 
 	$query = $pdo->prepare("SELECT pf_id FROM productfinish WHERE pf_name = ?");
@@ -27,8 +30,8 @@
 	$query->execute(array($pg_name));
 	$pg = $query->fetch(PDO::FETCH_ASSOC);
 
-	$query = $pdo->prepare("INSERT INTO product(prod_name, prod_desc, prod_price, prod_length, prod_width, prod_height, pf_id, pc_id, pg_id, prod_stock) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-	$query->execute(array($prod_name, $prod_desc, $prod_price, $prod_length, $prod_width, $prod_height, $pf['pf_id'], $pc['pc_id'], $pg['pg_id'], $prod_stock));	
+	$query = $pdo->prepare("INSERT INTO product(prod_name, prod_desc, prod_price, prod_length, prod_width, prod_height, pf_id, pc_id, pg_id, prod_stock, prod_image) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+	$query->execute(array($prod_name, $prod_desc, $prod_price, $prod_length, $prod_width, $prod_height, $pf['pf_id'], $pc['pc_id'], $pg['pg_id'], $prod_stock, $prod_image));	
+	move_uploaded_file($file, $destination);
 
-	header('Location: ../productlist.php');
-?>
+	?>

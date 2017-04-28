@@ -6,10 +6,10 @@
 <!DOCTYPE html>
 <html>
 <body>
-	<form method="post" enctype="multipart/form-data" action="test.php">
+	<form enctype="multipart/form-data" method="post" action="php/test.php">
+		<input type="hidden" name="size" value="1000000">
 		<input type="file" name="image">
-		<button type="submit">Submit</button>
-		
+		<button type="Submit" name="submit">Submit</button>	
 	</form>
 </body>
 </html>

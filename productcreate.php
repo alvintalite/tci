@@ -140,8 +140,8 @@
 									<div class="control-group">
 										<label for="prod_image" class="control-label">Upload Image</label>
 										<div class="controls">
-											<input type="file" class="btn-upload" name="prod_image">
-
+											<input type="hidden" name="size" value="1000000">
+											<input type="file" name="image">
 										</div>
 									</div>
 								</div>
@@ -162,43 +162,5 @@
   	</div>
 
   	</div>
-
-
- <?php
-	if (isset($_POST['submit']))
-	{
-		if(getimagesize($_FILES['prod_image']['tmp_name'])== FALSE)
-		{
-			echo "Please select an Image.";
-		}
-		else
-		{
-			$prod_image=addslashes($_FILES['prod_image']['tmp_name']);
-			$name=addslashes($_FILES['prod_image']['name']);
-			$prod_image=file_get_contents($prod_image);
-			$prod_image=base64_encode($prod_image);
-		}
-	}
-	function saveimage($name,$prod_image)
-	{
-		$con=mysql_connect("127.0.0.1","root","");
-		mysql_select_db("tcishop",$con);
-		
-		$result=mysql_query($qry,$con);
-		 $pdo = Database::connect();
-		 $qry="insert into product(name, prod_image) values(?, ?)";
-		 $qry->execute(array($name, $prod_image));
-
-		if($result)
-		{
-			echo "<br/> Image Uploaded.";
-		}
-		else
-		{
-			echo "<br/> Image not Uploaded.";
-		}
-	}
-?>
-
 </body>
 </html>
