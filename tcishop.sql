@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.0
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2017 at 03:22 PM
--- Server version: 10.1.10-MariaDB
--- PHP Version: 5.6.15
+-- Generation Time: Oct 26, 2017 at 11:05 AM
+-- Server version: 10.1.26-MariaDB
+-- PHP Version: 7.1.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -30,17 +32,20 @@ CREATE TABLE `account` (
   `user_id` int(11) NOT NULL,
   `user_name` varchar(20) NOT NULL,
   `user_pass` varchar(20) NOT NULL,
-  `user_type` varchar(20) NOT NULL
+  `user_type` varchar(20) NOT NULL,
+  `fname` varchar(20) NOT NULL,
+  `mname` varchar(20) NOT NULL,
+  `lname` varchar(20) NOT NULL,
+  `work_type` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `account`
 --
 
-INSERT INTO `account` (`user_id`, `user_name`, `user_pass`, `user_type`) VALUES
-(1, 'admin', 'admin', 'admin'),
-(2, 'user', 'user', 'User'),
-(3, 'customer', 'customer', 'customer');
+INSERT INTO `account` (`user_id`, `user_name`, `user_pass`, `user_type`, `fname`, `mname`, `lname`, `work_type`) VALUES
+(1, 'admin', 'admin', 'admin', 'Alvin', 'Apellido', 'Talite', 'Sales Representative'),
+(3, 'customer', 'customer', 'customer', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -288,7 +293,8 @@ ALTER TABLE `productfinish`
 -- AUTO_INCREMENT for table `productgroup`
 --
 ALTER TABLE `productgroup`
-  MODIFY `pg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `pg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
