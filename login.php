@@ -30,6 +30,7 @@
                     		</div>
                     		<div class="text-center submit">
                     			<button class="btn btn-success" type="submit">Login</button>
+                                <a href="index.php"><span class="btn btn-danger">Back</span></a>
                     		</div>
                     	</form>
                     </div>

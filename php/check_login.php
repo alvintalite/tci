@@ -15,7 +15,7 @@ session_start();
     {
         $_SESSION['login_username']=$user;
         if($count['user_type'] == 'admin'){
-           header("Location:../header.php"); 
+           header("Location:../admin/index.php"); 
         }else{
             header("Location:../index.php");
         }     
